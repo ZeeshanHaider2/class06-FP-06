@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const mentors = require('./mentors');
 
 const app = express();
 
