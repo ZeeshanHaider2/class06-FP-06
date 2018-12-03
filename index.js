@@ -6,7 +6,7 @@ const app = express();
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-// An api endpoint that returns a short list of items
+// An api endpoint to test the server
 app.get('/api', (req,res) => {
     var answer = 'Server responding';
     res.json(answer);
