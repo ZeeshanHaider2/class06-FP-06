@@ -14,18 +14,18 @@ extended: true
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, '../client/build')));
 
+//The endpoint for all the api actions, using the Routes.
+app.use('/api', Routes )
+
 // Test
 app.get('/test', function (req, res) {
 res.set('Content-Type', 'application/json');
 res.send('{"message":"Hello from the custom server!"}');
 });
 
-//The endpoint for all the api actions, using the Routes.
-app.get('/api', Routes );
-
-// Handles any requests that don't match the ones above
+// All remaining requests return the React app, so it can handle routing.
 app.get('*', (req,res) =>{
-    res.sendFile(path.join(__dirname+'/../client/build/index.html'));
+    res.sendFile(path.join(__dirname + '/../client/build', 'index.html'));
 });
 
 const port = process.env.PORT || 5000;
