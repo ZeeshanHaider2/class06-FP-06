@@ -1,6 +1,8 @@
 //We require mysql.
 const mysql =  require('mysql');
 
+console.log('from database');
+
 //A constant variable containing all the data we need for the database connection in the .env file
 
 const config = {
