@@ -22,7 +22,7 @@ const connection = mysql.createConnection({
     database
 });
 
-connection.getAllUsers = function () {
+connection.getAllMentors = function () {
     this.connect(() => {
         console.log('Connected to database');
     })

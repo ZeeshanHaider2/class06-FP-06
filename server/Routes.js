@@ -9,7 +9,7 @@ Routes
     //Get all the mentors
     .get('/mentors', (req, res) => {
         console.log('called');
-        database.getAllUsers()
+        database.getAllMentors()
         .then((result) => {
             res.send(result);
         })
