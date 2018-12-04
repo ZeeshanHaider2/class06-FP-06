@@ -34,3 +34,5 @@ connection.getAllUsers = function () {
         })
     })
 }
+
+module.exports = connection;

@@ -8,6 +8,7 @@ const Routes = Router();
 Routes
     //Get all the mentors
     .get('/mentors', (req, res) => {
+        console.log('called');
         database.getAllUsers()
         .then((result) => {
             res.send(result);
