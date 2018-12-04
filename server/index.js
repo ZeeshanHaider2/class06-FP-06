@@ -1,17 +1,27 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 
+const Routes = require('./Routes');
+
+//We set up all the components of our router.
 const app = express();
+
+app.use(bodyParser.urlencoded({
+extended: true
+}));
 
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-// An api endpoint to test the server
-app.get('/api', (req,res) => {
-    var answer = 'Server responding';
-    res.json(answer);
-    console.log('An answer form the server');
+// Test
+app.get('/test', function (req, res) {
+res.set('Content-Type', 'application/json');
+res.send('{"message":"Hello from the custom server!"}');
 });
+
+//The endpoint for all the api actions, using the Routes.
+app.get('/api', Routes );
 
 //Get mentors
 app.get('/mentors', (req,res) => {

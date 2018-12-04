@@ -2,15 +2,17 @@
   "name": "hyf-final-project-group5",
   "version": "1.0.0",
   "description": "Final project from Hack Your Future Copenhaguen, group #5",
-  "main": "index.js",
+  "main": "./server/index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node ./server/index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mysql": "^2.16.0"
   }
 }
