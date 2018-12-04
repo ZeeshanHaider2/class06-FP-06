@@ -23,11 +23,6 @@ res.send('{"message":"Hello from the custom server!"}');
 //The endpoint for all the api actions, using the Routes.
 app.get('/api', Routes );
 
-//Get mentors
-app.get('/mentors', (req,res) => {
-    res.send('Geting the mentors endpoint');
-});
-
 // Handles any requests that don't match the ones above
 app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
