@@ -13,7 +13,11 @@ class App extends Component {
 
     console.log(`${window.location.origin}/api/mentors`);
     
-    const mentors = await fetch(`${window.location.origin}/api/mentors`);
+    const response = await fetch(`${window.location.origin}/api/mentors`);
+
+    const mentors = await response.json();
+
+    console.log(mentors);
 
     this.setState(prevState => ({
       ...prevState, mentors: mentors
