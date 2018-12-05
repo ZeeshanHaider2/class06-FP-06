@@ -17,7 +17,7 @@ class App extends Component {
 
     this.setState(prevState => ({
       ...prevState, mentors: mentors
-    }), console.log('Mentors fetched and added to state')
+    }), console.log(this.state)
     );
   }
 
