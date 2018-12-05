@@ -11,9 +11,9 @@ class App extends Component {
 
    getAllMentors= async () => {
 
-    console.log(`${window.location.origin}/mentors`);
+    console.log(`${window.location.origin}/api/mentors`);
     
-    const mentors = await fetch(`${window.location.origin}/mentors`);
+    const mentors = await fetch(`${window.location.origin}/api/mentors`);
 
     this.setState(prevState => ({
       ...prevState, mentors: mentors
